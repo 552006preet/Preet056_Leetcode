@@ -20,6 +20,9 @@ class Solution:
             return element
         return -1
 
-            
+     #another one is there 
+     # we have to only write:-
+     #return (sorted(nums)[len(nums)//2])
+     #by doing this we're just sorting the elements and accessing them and comparing them as >n/2
 
         
