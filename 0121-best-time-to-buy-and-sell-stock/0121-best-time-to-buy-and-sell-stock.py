@@ -4,7 +4,7 @@ class Solution:
         profit=0
         for i in range(len(prices)):
             cost=prices[i]-mn
-            profit=max(cost,profit)
+            profit=max(profit,cost)
             mn=min(mn,prices[i])
         return profit
         
