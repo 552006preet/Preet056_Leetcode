@@ -6,7 +6,8 @@ class Solution:
         
         if count[1]==0 and count[2]==0:
             return False
-        if count[0]%2==0:
-            return count[1]>0 and count[2]>0
+        if count[0]%2==0: 
+            return count[1]>0 and count[2]>0 #we can write another line here as well 
+            #if count[1]>0 and count[2]>0 then true else false
         else:
             return abs(count[1]-count[2])>2
