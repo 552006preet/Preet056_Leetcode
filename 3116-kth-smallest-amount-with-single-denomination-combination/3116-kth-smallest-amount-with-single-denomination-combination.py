@@ -2,11 +2,10 @@ class Solution:
     def findKthSmallest(self, coins: List[int], k: int) -> int:
         n = len(coins)
         
-        # Inclusion-Exclusion: count numbers <= x divisible by any coin
         def count(x: int) -> int:
             total = 0
             m = len(coins)
-            # Iterate over all subsets of coins
+
             for mask in range(1, 1 << m):
                 lcm = 1
                 bits = 0
@@ -14,7 +13,7 @@ class Solution:
                     if mask & (1 << i):
                         bits += 1
                         lcm = lcm * coins[i] // math.gcd(lcm, coins[i])
-                        if lcm > x:  # overflow guard
+                        if lcm > x: 
                             break
                 if lcm <= x:
                     if bits % 2 == 1:
@@ -23,7 +22,6 @@ class Solution:
                         total -= x // lcm
             return total
         
-        # Binary search
         left, right = 1, max(coins) * k
         ans = -1
         while left <= right:
