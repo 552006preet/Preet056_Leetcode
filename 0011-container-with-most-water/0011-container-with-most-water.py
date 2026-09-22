@@ -7,6 +7,7 @@ class Solution:
         
         while left<right:
             current_area=(right-left)*min(height[left],height[right])
+            
             area=max(current_area,area)
 
             if height[left]<height[right]:
