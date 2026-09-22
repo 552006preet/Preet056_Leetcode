@@ -6,12 +6,12 @@ class Solution:
         area=0
         
         while left<right:
-            area=max(area,(right-left)*min(height[left],height[right]))
+            current_area=(right-left)*min(height[left],height[right])
+            area=max(current_area,area)
 
             if height[left]<height[right]:
                 left+=1
-            elif height[right]<height[left]:
-                right-=1
             else:
-                left+=1
+                right-=1
+
         return area
