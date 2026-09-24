@@ -3,8 +3,8 @@ class Solution:
         seen=defaultdict(list)
 
         for i in strs:
-            count=[0]*26
-            for j in i:
-                count[ord(j)-ord('a')]+=1
-            seen[tuple(count)].append(i)
+            # count=[0]*26
+            # for j in i:
+            #     count[ord(j)-ord('a')]+=1
+            seen[tuple(sorted(i))].append(i)
         return list(seen.values())
